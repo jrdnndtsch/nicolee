@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nicolee</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav>
+		<h1><%= link_to 'Nicolee', '/'%></h1>
+		<ul>
+			<li><%= link_to 'Translations', translations_path %></li>
+			<li></li>
+			<li></li>
+			<li><%= link_to 'Blog', posts_path %></li>
+			<li></li>
+		</ul>
+	</nav>
+<%= yield %>
+
+</body>
+</html>
