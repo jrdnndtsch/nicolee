@@ -1,38 +1,23 @@
 <p id="notice"><%= notice %></p>
+<% @posts.each do |post| %>
+  
+    <div <% if post.image.exists? %> style="background: url(<%= post.image.url(:large) %>)" <% end %>>  
+      <h2><%= post.title %></h2>
+      <p><%= post.excerpt %></p>
+      <%= link_to 'Read More', post %>
+    </div>
+ 
 
-<h1>Listing Posts</h1>
+  <% if user_signed_in? %> 
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Excerpt</th>
-      <th>Featured image</th>
-      <th>Author</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <%= link_to 'New Post', new_post_path %>
+  <% end %>
+<% end %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.excerpt %></td>
-        <td><%= post.featured_image %></td>
-        <td><%= post.author %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+  
 
 
 
-<%= link_to 'New Post', new_post_path %>

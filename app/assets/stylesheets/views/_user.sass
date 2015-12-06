@@ -1,0 +1,21 @@
+@import mixins/grid
+@import mixins/make-responsive
+.sessions
+	:margin-top 50px
+	h2
+		:margin-top 0
+.login
+	&__welcome
+		+make-column(4)
+		+make-gutter(0,1)
+		:display inline-block
+		:vertical-align top
+		+display-for(sm xs)
+			+make-column(12)
+			+make-gutter(0,0)
+	&__form
+		+make-column(7)	
+		:display inline-block
+		+display-for(sm xs)
+			+make-column(12)
+	

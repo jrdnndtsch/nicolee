@@ -7,6 +7,7 @@
 default: &default
   adapter: sqlite3
   pool: 5
+  host: localhost
   timeout: 5000
 
 development:
@@ -23,3 +24,5 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+  username: nicolee
+  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>

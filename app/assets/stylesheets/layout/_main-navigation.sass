@@ -1,0 +1,32 @@
+@import mixins/grid
+@import mixins/make-responsive
+@import mixins/container
+
+nav.default
+	+container
+	a 
+		:text-decoration none
+	h1 
+		:width 20%
+		:display inline-block	
+	ul 
+		:padding 0
+		:margin 0
+		:width 80%
+		:display inline-block
+		:text-align right	
+		li 
+			:display inline-block
+			:padding 0 15px
+nav.admin
+	:width 320px
+	:background #FAFAFA
+	ul 
+		:padding 0
+		:margin 0
+		li 
+			:border-bottom 1px solid rgba(0,0,0,0.05)
+			:padding 16px
+	a 
+		:color #222
+		:text-decoration none			

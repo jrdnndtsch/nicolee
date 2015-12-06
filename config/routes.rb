@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  resources :contacts
+  resources :about_nicolees
   devise_for :users
   resources :posts
   resources :translations
+  resources :about_nicolees
+  resources :contacts
 
-  get "/pages/:page" => "pages#show"
+  get "/", to: "pages#home", defaults: {body_class: 'home'}
+  get '/admin', to: 'pages#admin', defaults: {body_class: 'admin'}
   root "pages#show", page: "home"
   # The priority is based uon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

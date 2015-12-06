@@ -24,6 +24,7 @@
   <strong>Link:</strong>
   <%= @translation.link %>
 </p>
-
-<%= link_to 'Edit', edit_translation_path(@translation) %> |
-<%= link_to 'Back', translations_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_translation_path(@translation) %>
+<% end %>  
+<%= link_to 'Return to all translations', translations_path %>

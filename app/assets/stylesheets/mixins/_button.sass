@@ -1,0 +1,16 @@
+@import variables/colors
+=button-style
+	:border 1px solid $black
+	:background $black
+	:font-size 14px
+	:padding 12px 30px
+	:color white
+	:text-transform uppercase
+	:width auto
+	:height auto
+	
+	&:hover
+		:background rgba(28,28,28,0.8)
+input[type=submit]
+	+button-style		
+	
